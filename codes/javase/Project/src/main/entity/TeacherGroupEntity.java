@@ -7,54 +7,63 @@ public class TeacherGroupEntity {
 
 	private Integer id;
 	private String name;
-	private LocalDateTime registerDate;
-	private Integer teacherId;
+	private LocalDateTime register_date;
+	private Integer teacher_id;
+	
+	public TeacherGroupEntity(Integer id,String name, LocalDateTime register_date, Integer teacher_id) {
+		super();
+		this.id=id;
+		this.name = name;
+		this.register_date = register_date;
+		this.teacher_id = teacher_id;
+	}
 	
 	public TeacherGroupEntity() {
-		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public TeacherGroupEntity(Integer id, String name, LocalDateTime registerDate, Integer teacherId) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.registerDate = registerDate;
-		this.teacherId = teacherId;
-	}
+
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public LocalDateTime getRegisterDate() {
-		return registerDate;
+
+	public LocalDateTime getRegister_date() {
+		return register_date;
 	}
-	public void setRegisterDate(LocalDateTime registerDate) {
-		this.registerDate = registerDate;
+
+	public void setRegister_date(LocalDateTime register_date) {
+		this.register_date = register_date;
 	}
-	public Integer getTeacherId() {
-		return teacherId;
+
+	public Integer getTeacher_id() {
+		return teacher_id;
 	}
-	public void setTeacherId(Integer teacherId) {
-		this.teacherId = teacherId;
+
+	public void setTeacher_id(Integer teacher_id) {
+		this.teacher_id = teacher_id;
 	}
+
 	@Override
 	public String toString() {
-		return "TeacherGroupEntity [id=" + id + ", name=" + name + ", registerDate=" + registerDate + ", teacherId="
-				+ teacherId + "]";
+		return "TeacherGroupEntity [name=" + name + ", register_date=" + register_date + ", teacher_id=" + teacher_id
+				+ "]";
 	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, name, registerDate, teacherId);
+		return Objects.hash(name, register_date, teacher_id);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,10 +73,9 @@ public class TeacherGroupEntity {
 		if (getClass() != obj.getClass())
 			return false;
 		TeacherGroupEntity other = (TeacherGroupEntity) obj;
-		return Objects.equals(id, other.id) && Objects.equals(name, other.name)
-				&& Objects.equals(registerDate, other.registerDate) && Objects.equals(teacherId, other.teacherId);
+		return Objects.equals(name, other.name) && Objects.equals(register_date, other.register_date)
+				&& Objects.equals(teacher_id, other.teacher_id);
 	}
-	
 	
 	
 }

@@ -12,19 +12,30 @@ public class TeacherMain {
 public static void main(String[] args) {
 	
 	TeacherEntity teacher=new TeacherEntity
-			(null, "Aygun", "Memmedzade", "050", "aygun1", "1234");
+			(null, "Fexriyye", "Memmedzade", "051", "fexriyye1", "123");
+	
 	
 	TeacherRepository repo=new TeacherRepository();
+	
+	System.out.println(repo.getById(4));
+	
+	TeacherGroupEntity teacherGroup=new TeacherGroupEntity(null,"c1", LocalDateTime.now(), 1);
+	TeacherGroupRepository groupRepo=new TeacherGroupRepository();
+//	groupRepo.add(teacherGroup);
+//	groupRepo.deleteGroup(9);
+//	System.out.println(groupRepo.getAllGroupByTeacherId(1));
+	
+	
 	try {
 		String username=teacher.getUsername();
 		String password=teacher.getPassword();
 		
 		if (repo.login(username, password)) {
-			System.out.println("Login oldunuz!");
+			System.out.println("Login oldun");
+		}else {
+			System.out.println("Istifadeci adi ve ya parol sehvdir!");
 		}
-		else {
-			System.out.println("Istifadeci adi ve ya parol yalnisdir!");
-		}
+		
 		if (repo.checkUsername(teacher.getUsername())) {
 			System.out.println("bu username artiq movcuddur");
 		}
@@ -38,13 +49,6 @@ public static void main(String[] args) {
 		System.out.println(e.getMyMessage());
 	}
 	
-	System.out.println(repo.getById(1));
-	
-//	TeacherGroupEntity teacherGroup=new TeacherGroupEntity(null,"c1",LocalDateTime.now(),1);
-//	
-//	TeacherGroupRepository groupRepo=new TeacherGroupRepository();
-//	groupRepo.add(teacherGroup);
-//	System.out.println(groupRepo.findGroupByTeacherId(1));
-//	groupRepo.deleteById(12);
+
 }
 }

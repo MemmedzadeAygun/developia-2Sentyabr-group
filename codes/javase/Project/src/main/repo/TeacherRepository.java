@@ -64,11 +64,12 @@ public class TeacherRepository {
 		return userExists;
 	}
 
+	
 	public boolean login(String username, String password) {
 
 		boolean userExists = false;
 
-		String query = "SELECT count(*) FROM teacher where username='" + username + "' and password='" + password + "'";
+		String query = "SELECT count(*) FROM teacher where username='" + username + "' and password='"+password+"'";
 
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
@@ -91,33 +92,39 @@ public class TeacherRepository {
 	}
 	
 	
-	
-	public TeacherEntity getById(Integer id) {
+	public TeacherEntity getById(Integer Id) {
 		
-		String query="SELECT * FROM teacher WHERE Id='"+id+"';";
-		TeacherEntity teacher=new TeacherEntity();
+		String query = "SELECT * FROM teacher WHERE Id='"+Id+"';";
 		
+		TeacherEntity entity=new TeacherEntity();
+				
+				
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
 					"2004");
 
 			Statement st = con.createStatement();
-//			st.executeUpdate(query);
-			ResultSet rs=st.executeQuery(query);
-			rs.next();
+			ResultSet result = st.executeQuery(query);
 			
-			teacher.setId(rs.getInt("Id"));
-			teacher.setName(rs.getString("name"));
-			teacher.setSurname(rs.getString("surname"));
-			teacher.setPhone(rs.getString("phone"));
-			teacher.setUsername(rs.getString("username"));
-			teacher.setPassword(rs.getString("password"));
+			if(result.next()) {
+			entity.setId(result.getInt("Id"));
+			entity.setName(result.getString("name"));
+			entity.setSurname(result.getString("surname"));
+			entity.setPhone(result.getString("phone"));
+			entity.setUsername(result.getString("username"));
+			entity.setPassword(result.getString("password"));
+			}else {
+				System.out.println("Id not found!");
+			}
 
 			con.close();
 		} catch (Exception e) {
+//			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		return teacher;
+		
+		return entity;
+
 	}
 
 }

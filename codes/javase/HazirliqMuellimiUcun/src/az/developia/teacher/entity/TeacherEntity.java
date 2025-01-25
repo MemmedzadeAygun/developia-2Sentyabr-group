@@ -12,7 +12,6 @@ public class TeacherEntity {
 	private String username;
 	private String password;
 	
-	
 	public TeacherEntity(int id, String name, String surname, String phone, String address, String username,
 			String password) {
 		super();
