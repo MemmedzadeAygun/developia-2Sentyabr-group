@@ -64,12 +64,11 @@ public class TeacherRepository {
 		return userExists;
 	}
 
-	
 	public boolean login(String username, String password) {
 
 		boolean userExists = false;
 
-		String query = "SELECT count(*) FROM teacher where username='" + username + "' and password='"+password+"'";
+		String query = "SELECT count(*) FROM teacher where username='" + username + "' and password='" + password + "'";
 
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
@@ -90,30 +89,28 @@ public class TeacherRepository {
 
 		return userExists;
 	}
-	
-	
+
 	public TeacherEntity getById(Integer Id) {
-		
-		String query = "SELECT * FROM teacher WHERE Id='"+Id+"';";
-		
-		TeacherEntity entity=new TeacherEntity();
-				
-				
+
+		String query = "SELECT * FROM teacher WHERE Id='" + Id + "';";
+
+		TeacherEntity entity = new TeacherEntity();
+
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
 					"2004");
 
 			Statement st = con.createStatement();
 			ResultSet result = st.executeQuery(query);
-			
-			if(result.next()) {
-			entity.setId(result.getInt("Id"));
-			entity.setName(result.getString("name"));
-			entity.setSurname(result.getString("surname"));
-			entity.setPhone(result.getString("phone"));
-			entity.setUsername(result.getString("username"));
-			entity.setPassword(result.getString("password"));
-			}else {
+
+			if (result.next()) {
+				entity.setId(result.getInt("Id"));
+				entity.setName(result.getString("name"));
+				entity.setSurname(result.getString("surname"));
+				entity.setPhone(result.getString("phone"));
+				entity.setUsername(result.getString("username"));
+				entity.setPassword(result.getString("password"));
+			} else {
 				System.out.println("Id not found!");
 			}
 
@@ -122,7 +119,7 @@ public class TeacherRepository {
 //			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		
+
 		return entity;
 
 	}
