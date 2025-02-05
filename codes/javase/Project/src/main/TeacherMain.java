@@ -17,7 +17,7 @@ public static void main(String[] args) {
 	
 	TeacherRepository repo=new TeacherRepository();
 	
-	System.out.println(repo.getById(4));
+	System.out.println(repo.getById(1));
 	
 	TeacherGroupEntity teacherGroup=new TeacherGroupEntity(null,"c1", LocalDateTime.now(), 1);
 	TeacherGroupRepository groupRepo=new TeacherGroupRepository();

@@ -2,6 +2,7 @@ package az.developia.teacher.entity;
 
 import java.util.Objects;
 
+
 public class TeacherEntity {
 
 	private int Id;

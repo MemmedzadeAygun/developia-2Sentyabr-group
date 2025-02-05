@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import main.Constants;
 import main.entity.TeacherEntity;
 import main.entity.TeacherGroupEntity;
 
@@ -19,8 +20,8 @@ public class TeacherGroupRepository {
 				+"','"+teacherGroup.getTeacher_id()+"')";
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
-					"2004");
+			Connection con = DriverManager.getConnection(Constants.url, Constants.username,
+					Constants.password);
 
 			Statement st = con.createStatement();
 			st.executeUpdate(query);
@@ -38,8 +39,8 @@ public class TeacherGroupRepository {
 		String query="SELECT * FROM teacher_group WHERE teacher_id='"+teacherId+"';";
 		
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
-					"2004");
+			Connection con = DriverManager.getConnection(Constants.url, Constants.username,
+					Constants.password);
 
 			Statement st = con.createStatement();
 //			st.executeUpdate(query);
@@ -70,8 +71,8 @@ public class TeacherGroupRepository {
 		String query = "DELETE FROM teacher_group  WHERE Id='"+Id+"';";
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
-					"2004");
+			Connection con = DriverManager.getConnection(Constants.url, Constants.username,
+					Constants.password);
 
 			Statement st = con.createStatement();
 			st.executeUpdate(query);

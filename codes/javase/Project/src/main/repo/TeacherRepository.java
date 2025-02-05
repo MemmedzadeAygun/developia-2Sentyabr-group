@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import main.Constants;
 import main.entity.TeacherEntity;
 import main.exception.MyRuntimeException;
 
@@ -25,8 +26,8 @@ public class TeacherRepository {
 				+ teacher.getPassword() + "')";
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
-					"2004");
+			Connection con = DriverManager.getConnection(Constants.url, Constants.username,
+					Constants.password);
 
 			Statement st = con.createStatement();
 			st.executeUpdate(query);
@@ -45,8 +46,8 @@ public class TeacherRepository {
 		String query = "SELECT count(*) FROM teacher where username='" + username + "'";
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
-					"2004");
+			Connection con = DriverManager.getConnection(Constants.url, Constants.username,
+					Constants.password);
 
 			Statement st = con.createStatement();
 //			st.executeUpdate(query);
@@ -71,8 +72,8 @@ public class TeacherRepository {
 		String query = "SELECT count(*) FROM teacher where username='" + username + "' and password='" + password + "'";
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
-					"2004");
+			Connection con = DriverManager.getConnection(Constants.url, Constants.username,
+					Constants.password);
 
 			Statement st = con.createStatement();
 //			st.executeUpdate(query);
@@ -97,8 +98,8 @@ public class TeacherRepository {
 		TeacherEntity entity = new TeacherEntity();
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/teacher_db?useSSL=false", "root",
-					"2004");
+			Connection con = DriverManager.getConnection(Constants.url, Constants.username,
+					Constants.password);
 
 			Statement st = con.createStatement();
 			ResultSet result = st.executeQuery(query);

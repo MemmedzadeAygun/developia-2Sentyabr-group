@@ -35,11 +35,11 @@ public class TeacherGroupRepository {
 	}
 	
 	
-	public ArrayList<TeacherGroupEntity> getAllTeacherGroup(Integer id){
+	public ArrayList<TeacherGroupEntity> getAll(Integer teacherid){
 		
 		ArrayList<TeacherGroupEntity> teacherGroup=new ArrayList<TeacherGroupEntity>();
 		
-		String query="SELECT * FROM teacher_group where teacher_id='"+id+"';";
+		String query="SELECT * FROM teacher_group where teacher_id='"+teacherid+"';";
 		
 		try {
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/java_teacher?useSSL=false",

@@ -22,7 +22,7 @@ public class TeacherRepository {
 
 		try {
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/java_teacher?useSSL=false",
-					"root", "2004");
+					"root", "2004");		//url,username,password
 
 			Statement st = conn.createStatement();
 
@@ -97,5 +97,4 @@ public class TeacherRepository {
 		return userExists;
 
 	}
-	
 }

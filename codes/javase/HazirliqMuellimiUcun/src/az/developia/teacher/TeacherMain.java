@@ -1,5 +1,6 @@
 package az.developia.teacher;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import az.developia.teacher.entity.TeacherEntity;
@@ -12,24 +13,27 @@ public class TeacherMain {
 public static void main(String[] args) {
 	
 	TeacherEntity teacher=new TeacherEntity
-			(0, "Elrahim", "Elizade", "051", "nizami st.", "elirahim1", "1234");
+			(0, "Elrahimmmm", "Elizade", "051", "nizami st.", "elirahim1", "1234");
 	
 	TeacherRepository repo=new TeacherRepository();
 	
-	TeacherGroupEntity teacherGroup=new TeacherGroupEntity(null, "a3", LocalDateTime.now(), 6);
+	TeacherGroupEntity teacherGroup=new TeacherGroupEntity(null, "a3",LocalDateTime.now(), 6);
+	LocalDateTime.of(2025, 1, 29, 9, 04);
+
+	
 	
 	TeacherGroupRepository groupRepo=new TeacherGroupRepository();
 //	groupRepo.addGroup(teacherGroup);
 	groupRepo.deleteGroup(3);
-	System.out.println(groupRepo.getAllTeacherGroup(6));
+	System.out.println(groupRepo.getAll(6));
 	
 	
 	try {
 		String username=teacher.getUsername();
 		String password=teacher.getPassword();
 		
-		if (repo.login(username, password)) {
-			System.out.println("Login oldun");
+		if (repo.login("cahandar1", "1234")) {
+			System.out.println("Login oldun!");
 		}else {
 			System.out.println("Istifadeci adi ve ya parol yalnisdir!");
 		}
