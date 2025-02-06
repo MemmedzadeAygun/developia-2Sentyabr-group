@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import az.developia.teacher.Constant;
 import az.developia.teacher.entity.TeacherGroupEntity;
 import az.developia.teacher.exception.MyRuntimeException;
 
@@ -20,8 +21,8 @@ public class TeacherGroupRepository {
 				+"','"+teacherGroup.getTeacher_id()+"')";
 				
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/java_teacher?useSSL=false",
-					"root", "2004");
+			Connection conn = DriverManager.getConnection(Constant.url,
+					Constant.username, Constant.password);
 
 			Statement st = conn.createStatement();
 
@@ -42,8 +43,8 @@ public class TeacherGroupRepository {
 		String query="SELECT * FROM teacher_group where teacher_id='"+teacherid+"';";
 		
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/java_teacher?useSSL=false",
-					"root", "2004");
+			Connection conn = DriverManager.getConnection(Constant.url,
+					Constant.username, Constant.password);
 
 			Statement st = conn.createStatement();
 
@@ -76,8 +77,8 @@ public class TeacherGroupRepository {
 		String query="DELETE FROM teacher_group WHERE Id='"+id+"';";
 		
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/java_teacher?useSSL=false",
-					"root", "2004");
+			Connection conn = DriverManager.getConnection(Constant.url,
+					Constant.username, Constant.password);
 
 			Statement st = conn.createStatement();
 

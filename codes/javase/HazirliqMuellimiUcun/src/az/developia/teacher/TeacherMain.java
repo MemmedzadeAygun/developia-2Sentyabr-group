@@ -13,19 +13,19 @@ public class TeacherMain {
 public static void main(String[] args) {
 	
 	TeacherEntity teacher=new TeacherEntity
-			(0, "Elrahimmmm", "Elizade", "051", "nizami st.", "elirahim1", "1234");
+			(0, "Elirahimmmm", "Elizade", "051", "nizami st.", "elirahim1", "1234");
 	
 	TeacherRepository repo=new TeacherRepository();
+	System.out.println(repo.getById(5));
 	
 	TeacherGroupEntity teacherGroup=new TeacherGroupEntity(null, "a3",LocalDateTime.now(), 6);
 	LocalDateTime.of(2025, 1, 29, 9, 04);
-
 	
 	
 	TeacherGroupRepository groupRepo=new TeacherGroupRepository();
 //	groupRepo.addGroup(teacherGroup);
 	groupRepo.deleteGroup(3);
-	System.out.println(groupRepo.getAll(6));
+//	System.out.println(groupRepo.getAll(6));
 	
 	
 	try {
