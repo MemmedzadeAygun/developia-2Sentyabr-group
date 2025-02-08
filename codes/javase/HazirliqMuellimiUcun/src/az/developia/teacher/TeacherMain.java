@@ -23,7 +23,7 @@ public static void main(String[] args) {
 	
 	
 	TeacherGroupRepository groupRepo=new TeacherGroupRepository();
-//	groupRepo.addGroup(teacherGroup);
+	groupRepo.addGroup(teacherGroup);
 	groupRepo.deleteGroup(3);
 //	System.out.println(groupRepo.getAll(6));
 	
