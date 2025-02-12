@@ -1,12 +1,22 @@
 package az.developia.spring_project.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "students")
 public class Students {
@@ -17,30 +27,7 @@ public class Students {
 	@Size(min=2,max=40,message="Ad min 2, max 40 simvol ola biler")
 	private String name;
 	
+	@Size(min=2,max=40,message="Soyad min 2, max 40 simvol ola biler")
 	private String surname;
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-	@Override
-	public String toString() {
-		return "Students [id=" + id + ", name=" + name + ", surname=" + surname + "]";
-	}
-	
-	
+
 }

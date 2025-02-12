@@ -6,8 +6,8 @@ public class MyRuntimeException extends RuntimeException {
 
 	private BindingResult br;
 
-	public MyRuntimeException(BindingResult br) {
-		super();
+	public MyRuntimeException(BindingResult br,String message) {
+		super(message);
 		this.br = br;
 	}
 	
