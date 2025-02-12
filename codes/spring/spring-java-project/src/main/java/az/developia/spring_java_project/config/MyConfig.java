@@ -17,6 +17,9 @@ public class MyConfig {
 		return s;
 	}
 	
+	//Component scan metodun geriye qaytardigi obyekti @Bean annotasiyasinin komeyi ile 
+	//Application Contextde bean olaraq qeydiyyat edir. 
+	
 	@Bean
 	public Computer myComp2() {
 		Computer c=new Computer();
