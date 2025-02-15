@@ -1,13 +1,18 @@
 package az.developia.spring_project_2sentyabr.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component(value = "myStudent1")
 public class Student{
-
+	
 	private Integer id;
 	private String name;
 	private String surname;
+	@Autowired
+	@Qualifier(value = "myComp1")
+	private Computer computer;
 	
 	public Student() {
 		this.id=1;
@@ -39,10 +44,21 @@ public class Student{
 		this.surname = surname;
 	}
 
+	public Computer getComputer() {
+		return computer;
+	}
+
+
+	public void setComputer(Computer computer) {
+		this.computer = computer;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + "]";
+		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + ", computer=" + computer + "]";
 	}
+
 	
 	
 }

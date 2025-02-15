@@ -15,16 +15,18 @@ public class SpringProject2sentyabrApplication {
 	//config
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext run = SpringApplication.run(SpringProject2sentyabrApplication.class, args);
+		ConfigurableApplicationContext r = SpringApplication.run(SpringProject2sentyabrApplication.class, args);
 		
 		//bean
-		Student bean = run.getBean(Student.class);
+		Student bean =r.getBean("myStudent2", Student.class);
+		System.out.println(bean.getComputer().getModel());
 		System.out.println(bean.getName());
-
-		String[] beanDefinitionNames = run.getBeanDefinitionNames();
-		for (String names : beanDefinitionNames) {
-			System.out.println(names);
-		}
+		
+//		
+//		String[] beanDefinitionNames = r.getBeanDefinitionNames();
+//		for (String names : beanDefinitionNames) {
+//			System.out.println(names);
+//		}
 	}
 
 }
