@@ -2,9 +2,14 @@ package az.developia.spring_project_2sentyabr.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 @Component(value = "myStudent1")
+//@Scope(value = "prototype")
 public class Student{
 	
 	private Integer id;
@@ -15,6 +20,7 @@ public class Student{
 	private Computer computer;
 	
 	public Student() {
+		System.out.println("Student object created");
 		this.id=1;
 		this.name="Xedice";
 		this.surname="Memmedov";
@@ -58,7 +64,15 @@ public class Student{
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + ", computer=" + computer + "]";
 	}
-
 	
+	@PostConstruct
+	public void init() {
+		System.out.println("init method");
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("destroy method");
+	}
 	
 }

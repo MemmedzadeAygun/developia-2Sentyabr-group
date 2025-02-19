@@ -10,7 +10,7 @@ import az.developia.spring_project_2sentyabr.entity.Student;
 @Configuration
 public class MyConfig {
 	
-	@Bean
+	//@Bean
 	public Student myStudent2() {
 		Student s=new Student();
 		s.setId(45);
