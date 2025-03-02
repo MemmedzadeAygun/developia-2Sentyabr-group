@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Bu senendi basligidir</title>
+</head>
+<body>
+	<b>Bu kitablar sehifesidir</b>
+
+	<ul>
+		<li th:each="book : ${books}">
+			<p>
+				<strong>Name:</strong><span th:text="${book.getName()}"></span>
+			</p>
+			<p>
+				<strong>Author:</strong><span th:text="${book.getAuthor()}"></span>
+			</p>
+		</li>
+	</ul>
+
+</body>
+
+</html>

@@ -18,13 +18,13 @@ public class SpringProject2sentyabrApplication {
 		ConfigurableApplicationContext r = SpringApplication.run(SpringProject2sentyabrApplication.class, args);
 		
 		//bean
-		Student bean =r.getBean("myStudent1", Student.class);
-		
-		Student bean2 =r.getBean("myStudent1", Student.class);
-		
-		
-		System.out.println(bean.getComputer().getModel());
-		System.out.println(bean.getName());
+//		Student bean =r.getBean("myStudent1", Student.class);
+//		
+//		Student bean2 =r.getBean("myStudent1", Student.class);
+//		
+//		
+//		System.out.println(bean.getComputer().getModel());
+//		System.out.println(bean.getName());
 		
 //		
 //		String[] beanDefinitionNames = r.getBeanDefinitionNames();

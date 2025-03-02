@@ -16,11 +16,11 @@ public class SpringJavaProjectApplication {
 	public static void main(String[] args) {
 	 ConfigurableApplicationContext run= SpringApplication.run(SpringJavaProjectApplication.class, args);
 
-	Student studentBean= run.getBean("myStudent1", Student.class);
-	
-	Student studentBean2= run.getBean("myStudent1", Student.class);
-	
-	System.out.println(studentBean.getName());
+//	Student studentBean= run.getBean("myStudent1", Student.class);
+//	
+//	Student studentBean2= run.getBean("myStudent1", Student.class);
+//	
+//	System.out.println(studentBean.getName());
 	
 //	System.out.println(studentBean.getComputer().getModel());
 	 

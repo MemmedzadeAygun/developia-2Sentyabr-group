@@ -8,22 +8,25 @@ import org.springframework.stereotype.Component;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
-@Component(value = "myStudent1")
-//@Scope(value = "prototype")
+
 public class Student{
 	
 	private Integer id;
 	private String name;
 	private String surname;
-	@Autowired
-	@Qualifier(value = "myComp1")
-	private Computer computer;
 	
 	public Student() {
 		System.out.println("Student object created");
 		this.id=1;
 		this.name="Xedice";
 		this.surname="Memmedov";
+	}
+
+	public Student(Integer id, String name, String surname) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
 	}
 
 	public Integer getId() {
@@ -49,22 +52,13 @@ public class Student{
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-
-	public Computer getComputer() {
-		return computer;
-	}
-
-
-	public void setComputer(Computer computer) {
-		this.computer = computer;
-	}
-
-
+	
+	
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + ", computer=" + computer + "]";
+		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + "]";
 	}
-	
+
 	@PostConstruct
 	public void init() {
 		System.out.println("init method");
