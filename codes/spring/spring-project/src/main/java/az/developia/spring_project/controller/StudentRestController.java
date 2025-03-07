@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +31,7 @@ import az.developia.spring_project.response.StudentResponse;
 
 @RestController
 @RequestMapping(path = "/students")
+@CrossOrigin(origins = "*")
 public class StudentRestController {
 	
 //	@Autowired
@@ -48,18 +50,19 @@ public class StudentRestController {
 	private AuthorityRepository authorityRepository;
 	
 	@GetMapping
-	@PreAuthorize(value = "hasAuthority('ROLE_GET_STUDENT')")
+//	@PreAuthorize(value = "hasAuthority('ROLE_GET_STUDENT')")
 	public StudentResponse getAll(){
 		StudentResponse studentResponse=new StudentResponse();
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		TeacherEntity operatorTeacher=teacherRepository.findByUsername(username);
 		Integer teacherId=operatorTeacher.getId();
 		
-//		studentResponse.setStudents(studentRepo.findAllByTeacherId(teacherId));
+		studentResponse.setStudents(studentRepo.findAllByTeacherId(teacherId));
 		List<Students> list=studentRepo.findAllByTeacherId(teacherId);
+//		List<Students> list=studentRepo.findAll();
 		
 		studentResponse.setStudents(list);
-		studentResponse.setUsername("Aygun");
+//		studentResponse.setUsername("Aygun");
 		return studentResponse;
 		
 	}

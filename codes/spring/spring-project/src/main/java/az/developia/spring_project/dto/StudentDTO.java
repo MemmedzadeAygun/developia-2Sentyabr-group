@@ -30,9 +30,9 @@ public class StudentDTO {
 
 	@Size(min = 2, max = 40, message = "Password min 2, max 40 simvol ola biler")
 	private String password;
-	
-	@Past(message = "kecmis zaman olmalidir")
-	private LocalDate birthday;
+//	
+//	@Past(message = "kecmis zaman olmalidir")
+//	private LocalDate birthday;
 	
 	@Pattern(regexp = "[a-z]+@[a-z]+\\.[a-z]{2,4}",message = "emaili duz yaz!!")
 	private String email;

@@ -19,5 +19,11 @@ function onTeacherSubmit(event){
    let xml=new XMLHttpRequest();
    xml.open('POST','http://localhost:8085/users/teacher',true);
    xml.setRequestHeader('Content-type','application/json');
-   xml.send(request);
+   xml.send(request); 
 }
+
+let signIn=document.querySelector('button');
+
+signIn.addEventListener('click', () => {
+    window.location.href = "login.html";
+})

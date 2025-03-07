@@ -12,7 +12,7 @@ public class MyConfig {
 	
 	//@Bean
 	public Student myStudent2() {
-		Student s=new Student();
+		Student s=new Student(null, null, null);
 		s.setId(45);
 		s.setName("Fuad");
 		s.setSurname("Bayramov");

@@ -10,9 +10,11 @@ import java.util.Map.Entry;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping(path = "/students")
 public class StudentController {
 //	@GetMapping(path = "/students")
 //	public String showStudents(@RequestParam (name = "q") String q) {

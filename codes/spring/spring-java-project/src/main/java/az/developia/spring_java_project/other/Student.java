@@ -7,53 +7,41 @@ import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import jakarta.validation.constraints.Size;
 
 //@Scope(value = "prototype")
-@Component(value = "myStudent1")
+//@Component(value = "myStudent1")
 public class Student {
 	private Integer Id;
-	private String name;
-	@Autowired
-	@Qualifier(value = "myComp2")
-	private Computer computer;
 	
-	public Student() {
-		System.out.println("Student object created");
-		this.Id=1;
-		this.name="Nigar";
-	}
-
+	@Size(min=2,max=40,message="ad min 2,max 40 simvol ola biler")
+	private String name;
+	
+	@Size(min=2,max=40,message="ad min 2,max 40 simvol ola biler")
+	private String surname;
+	
 	public Integer getId() {
 		return Id;
 	}
-
 	public void setId(Integer id) {
 		Id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Computer getComputer() {
-		return computer;
+	public String getSurname() {
+		return surname;
 	}
-
-	public void setComputer(Computer computer) {
-		this.computer = computer;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
-	
-	@PostConstruct
-	public void init() {
-		System.out.println("init method");
+	@Override
+	public String toString() {
+		return "Student [Id=" + Id + ", name=" + name + ", surname=" + surname + "]";
 	}
 	
-	@PreDestroy
-	public void destroy() {
-		System.out.println("destroy method");
-	}
+	
 }

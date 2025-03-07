@@ -7,20 +7,19 @@ import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import jakarta.validation.constraints.Size;
 
 
 public class Student{
 	
 	private Integer id;
+	
+	@Size(min = 2,max=40,message="ad min 2, max 40 simvol ola biler")
+//	[errormessage1]
 	private String name;
+	
 	private String surname;
 	
-	public Student() {
-		System.out.println("Student object created");
-		this.id=1;
-		this.name="Xedice";
-		this.surname="Memmedov";
-	}
 
 	public Student(Integer id, String name, String surname) {
 		super();
