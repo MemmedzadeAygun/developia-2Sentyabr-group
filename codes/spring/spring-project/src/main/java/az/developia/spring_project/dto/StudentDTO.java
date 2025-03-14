@@ -8,6 +8,11 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,9 +35,11 @@ public class StudentDTO {
 
 	@Size(min = 2, max = 40, message = "Password min 2, max 40 simvol ola biler")
 	private String password;
-//	
-//	@Past(message = "kecmis zaman olmalidir")
-//	private LocalDate birthday;
+	
+	@Past(message = "kecmis zaman olmalidir")
+	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonDeserialize(using = LocalDateDeserializer.class)
+	private LocalDate birthday;
 	
 	@Pattern(regexp = "[a-z]+@[a-z]+\\.[a-z]{2,4}",message = "emaili duz yaz!!")
 	private String email;

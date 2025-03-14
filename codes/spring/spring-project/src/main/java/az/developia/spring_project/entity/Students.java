@@ -1,5 +1,7 @@
 package az.developia.spring_project.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +23,7 @@ public class Students {
 	private Integer id;
 	private String name;
 	private String surname;
+	private LocalDate birthday;
 	private Integer teacherId;
 	private String username;
 }

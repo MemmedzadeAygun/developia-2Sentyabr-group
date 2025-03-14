@@ -7,25 +7,36 @@ import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
 
-
+@Entity
+@Table(name = "students")
 public class Student{
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Size(min = 2,max=40,message="ad min 2, max 40 simvol ola biler")
-//	[errormessage1]
 	private String name;
 	
 	private String surname;
 	
-
+	
 	public Student(Integer id, String name, String surname) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
+	}
+	
+	public Student() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getId() {

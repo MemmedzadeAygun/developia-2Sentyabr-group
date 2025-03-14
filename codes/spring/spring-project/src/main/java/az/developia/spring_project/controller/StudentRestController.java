@@ -33,12 +33,10 @@ import az.developia.spring_project.response.StudentResponse;
 @RequestMapping(path = "/students")
 @CrossOrigin(origins = "*")
 public class StudentRestController {
-	
-//	@Autowired
-//	private DataSource dataSource;
-	
+
 	@Autowired
 	private StudentRepository studentRepo;
+	
 	
 	@Autowired
 	private TeacherRepository teacherRepository;
@@ -67,15 +65,6 @@ public class StudentRestController {
 		
 	}
 
-//	@GetMapping
-//	public List<String> getStudents(){
-//		List<String> students=new ArrayList<String>();
-//		students.add("Aygun");
-//		students.add("Gunay");
-//		students.add("Nigar");
-//		students.add("Nicat");
-//		return students;
-//	}
 	
 	
 	@PostMapping
@@ -98,18 +87,11 @@ public class StudentRestController {
 		students.setId(null);
 		students.setName(student.getName());
 		students.setSurname(student.getSurname());
+		students.setBirthday(student.getBirthday());
 //		students.setTeacherId(student.getTeacherId());
 		students.setTeacherId(teacherId);		
 		studentRepo.save(students);
-		
-		
-//		try {
-//			Connection conn=dataSource.getConnection();
-//			Statement st=conn.createStatement();
-//			st.executeUpdate("insert into students (name, surname) values ('"+student.getName()+"','"+student.getSurname()+"')");
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
+
 	}
 
 	@PutMapping

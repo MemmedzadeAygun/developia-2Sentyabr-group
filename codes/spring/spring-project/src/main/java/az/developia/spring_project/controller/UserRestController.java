@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -44,6 +45,9 @@ public class UserRestController {
 	
 	@Autowired
 	private AuthorityRepository authorityRepository;
+	
+	@Autowired
+	private ModelMapper mapper;
 
 	@PostMapping(path = "/teacher")
 	public void createTeacher(@RequestBody TeacherDTO teacher) {
@@ -56,10 +60,11 @@ public class UserRestController {
 		}
 		
 		TeacherEntity t=new TeacherEntity();
-		t.setId(teacher.getId());
-		t.setName(teacher.getName());
-		t.setSurname(teacher.getSurname());
-		t.setUsername(teacher.getUsername());
+//		t.setId(teacher.getId());
+//		t.setName(teacher.getName());
+//		t.setSurname(teacher.getSurname());
+//		t.setUsername(teacher.getUsername());
+		mapper.map(teacher, t);
 		teacherRepository.save(t);
 		
 		UserEntity u=new UserEntity();
