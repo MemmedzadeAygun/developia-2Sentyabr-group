@@ -5,13 +5,18 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,39 +29,14 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping(path = "/api/students")
 public class StudentRestController {
-	
-//	@Autowired
-//	private DataSource dataSource;
-	
+
 	@Autowired
 	private StudentRepository studentRepository;
 	
 
 	@GetMapping
 	public List<Student> getStudents(){
-		List<Student> students=new ArrayList<Student>();
-		students.add(new Student(1,"Alirahim","Alizade"));
-		students.add(new Student(2,"Elsad","Hemidov"));
-		students.add(new Student(3,"Fexriyye","Alizade"));
-		
-//		try {
-//			Connection connection=dataSource.getConnection();
-//			Statement st=connection.createStatement();
-//			String query="select * from students";
-//			ResultSet executeQuery = st.executeQuery(query);
-//			while (executeQuery.next()) {
-//				Student s=new Student();
-//				s.setId(executeQuery.getInt("id"));
-//				s.setName(executeQuery.getString("name"));
-//				s.setSurname(executeQuery.getString("surname"));
-//				
-//				students.add(s);
-//			}
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//		}
-		
-		return students;
+		return studentRepository.findAll();
 		
 	}
 	
@@ -65,23 +45,62 @@ public class StudentRestController {
 	@PostMapping(path = "/add")
 	public void addStudent(@Valid @RequestBody Student student,BindingResult br) {
 		if (br.hasErrors()) {
-			throw new OurRuntimeException(br);
+			throw new OurRuntimeException(br,"melumatlarin tamliginda problem var");
 		}
-		System.out.println(student);
-		
-//		
-//		try {
-//			Connection connection=dataSource.getConnection();
-//			Statement st=connection.createStatement();
-//			String query="insert into students(name,surname) values('"+student.getName()+"','"+student.getSurname()+"')";
-//			st.executeUpdate(query);
-//			connection.close();
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//		}
-		
+
 		studentRepository.save(student);
+		student.setId(null);
 		
 //		{1,"Aygun","Memmedzade"}
+	}
+	
+	
+	//null,0,found,not found
+	@PutMapping(path = "/update")
+	public void update(@Valid @RequestBody Student student,BindingResult br) {
+		if (br.hasErrors()) {
+			throw new OurRuntimeException(br,"melumatlarin tamliginda problem var");
+		}
+		
+		if (student.getId()==null || student.getId()<=0) {
+			throw new OurRuntimeException(null,"id mutleqdir");
+		}
+
+		if (studentRepository.findById(student.getId()).isPresent()) {
+			studentRepository.save(student);
+		}else {
+			throw new OurRuntimeException(null,"id tapilmadi");
+		}
+		
+	}
+	
+	@DeleteMapping(path = "/{id}")
+	public ResponseEntity<String> deleteStudent(@PathVariable Integer id) {
+		//null, 0, not found, found
+		if (id==null || id<=0) {
+			throw new OurRuntimeException(null, "id mutleqdir");
+		}
+		Optional<Student> byId = studentRepository.findById(id);
+		if (byId.isPresent()) {
+			studentRepository.deleteById(id);
+		}else {
+			throw new OurRuntimeException(null, "id tapilmadi");
+		}
+		
+		return ResponseEntity.ok("Stdudent delete successfully");
+	}
+	
+	
+	@GetMapping(path = "/{id}")
+	public Student getById(@PathVariable Integer id) {
+		if (id==null || id<=0) {
+			throw new OurRuntimeException(null, "id mutleqdir");
+		}
+		Optional<Student> byId = studentRepository.findById(id);
+		if (byId.isPresent()) {
+			return byId.get();
+		}else {
+			throw new OurRuntimeException(null, "id tapilmadi");
+		}
 	}
 }
