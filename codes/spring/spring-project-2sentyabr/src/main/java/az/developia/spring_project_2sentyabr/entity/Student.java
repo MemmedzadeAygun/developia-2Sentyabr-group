@@ -25,6 +25,7 @@ public class Student{
 	@Size(min = 2,max=40,message="ad min 2, max 40 simvol ola biler")
 	private String name;
 	
+	@Size(min = 2,max=40,message="soyad min 2, max 40 simvol ola biler")
 	private String surname;
 	
 	
