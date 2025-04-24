@@ -13,12 +13,12 @@ import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtUtil {
-
 	private final Key signingKey;
 	
 	public JwtUtil(@Value("${jwt.secret}") String secretKey) {
 		byte[] decode = Base64.getDecoder().decode(secretKey);
 		this.signingKey = Keys.hmacShaKeyFor(decode);
+		System.out.println(decode.length);
 	}
 	
 	public String generateToken(String username) {
@@ -26,6 +26,7 @@ public class JwtUtil {
 		.setSubject(username)
 		.setIssuedAt(new Date())
 		.setExpiration(new Date(System.currentTimeMillis() + 86400000)) //1 gun
+		.signWith(signingKey)
 		.compact();
 	}
 	
