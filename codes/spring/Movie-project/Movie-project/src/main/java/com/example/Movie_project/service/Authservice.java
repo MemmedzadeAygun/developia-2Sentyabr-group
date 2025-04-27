@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.Movie_project.dto.AuthRequestDto;
 import com.example.Movie_project.entity.User;
+import com.example.Movie_project.exception.InvalidCredentialsException;
 import com.example.Movie_project.exception.OurRuntimeException;
 import com.example.Movie_project.repository.UserRepository;
 import com.example.Movie_project.util.JwtUtil;
@@ -42,11 +43,9 @@ public class Authservice {
 
 	public String login(AuthRequestDto dto) {
 		Optional<User> user = userRepository.findByUsername(dto.getUsername());
-		if (!user.isPresent()) {
-			throw new RuntimeException("User not found");
-		}
-		if (!passwordEncoder.matches(dto.getPassword(), user.get().getPassword())) {
-			throw new RuntimeException("Password incorrect");
+		
+		if (!user.isPresent() || !passwordEncoder.matches(dto.getPassword(), user.get().getPassword())) {
+			throw new InvalidCredentialsException("Username or pasword incorrect");
 		}
 		
 		

@@ -10,12 +10,21 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.example.Movie_project.exception.InvalidCredentialsException;
 import com.example.Movie_project.exception.OurRuntimeException;
 import com.example.Movie_project.response.ExceptionResponse;
 import com.example.Movie_project.response.ValidationResponse;
 
 @RestControllerAdvice
 public class ExceptionHandlers {
+	
+	@ExceptionHandler
+	@ResponseStatus(code = HttpStatus.UNAUTHORIZED) //401
+	public ExceptionResponse handleInvalidCredentilasException(InvalidCredentialsException exc) {
+		ExceptionResponse response = new ExceptionResponse();
+		response.setMessage(exc.getMessage());
+		return response;
+	}
 
 	@ExceptionHandler
 	@ResponseStatus(code = HttpStatus.BAD_REQUEST) //400
