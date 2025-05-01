@@ -5,27 +5,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "movies")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-
+public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private String firstName;
-	private String lastName;
-	private String username;
-	private String password;
-	private String email;
-	
+	private Integer Id;
+	private String title;
+	private String genre;
+	private Integer rating;
+	private Integer userId;
 }
