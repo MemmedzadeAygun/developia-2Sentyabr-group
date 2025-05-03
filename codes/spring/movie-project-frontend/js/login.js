@@ -20,7 +20,8 @@ loginForm.addEventListener('submit', (e) => {
         if (response.ok) {
             const token = await response.text();
             localStorage.setItem('token', token);
-            alert("Login successfully")
+            alert("Login successfully");
+            window.location.href="index.html";
         }else{
             let data = response.json();
             alert(data.message);

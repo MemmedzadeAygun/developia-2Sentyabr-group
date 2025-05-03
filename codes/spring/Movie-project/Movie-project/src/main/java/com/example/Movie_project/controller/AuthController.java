@@ -1,16 +1,21 @@
 package com.example.Movie_project.controller;
 
+
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Movie_project.dto.AuthRequestDto;
 import com.example.Movie_project.exception.OurRuntimeException;
-import com.example.Movie_project.repository.UserRepository;
 import com.example.Movie_project.service.Authservice;
 
 import jakarta.validation.Valid;
@@ -35,6 +40,11 @@ public class AuthController {
 	@PostMapping(path = "/login")
 	public String login(@RequestBody AuthRequestDto dto) {
 		return service.login(dto);
+	}
+	
+	@GetMapping(path = "/profile")
+	public ResponseEntity<Map<String, String>> getUserDetails(@RequestHeader("Authorization") String token){
+		return service.getUserDetail(token);
 	}
 	
 }

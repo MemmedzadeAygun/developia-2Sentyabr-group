@@ -1,6 +1,7 @@
 package com.example.Movie_project.config;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -37,7 +38,7 @@ public class AuthFilter extends OncePerRequestFilter {
         String username = jwtUtil.extractUsername(token);
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            User userDetails = new User(username, "", new java.util.ArrayList<>());
+            User userDetails = new User(username, "", new ArrayList());
             UsernamePasswordAuthenticationToken authToken =
                     new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
