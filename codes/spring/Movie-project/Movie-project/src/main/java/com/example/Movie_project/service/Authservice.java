@@ -11,6 +11,7 @@ import com.example.Movie_project.dto.AuthRequestDto;
 import com.example.Movie_project.entity.User;
 import com.example.Movie_project.exception.InvalidCredentialsException;
 import com.example.Movie_project.exception.OurRuntimeException;
+import com.example.Movie_project.repository.MovieRepository;
 import com.example.Movie_project.repository.UserRepository;
 import com.example.Movie_project.util.JwtUtil;
 
@@ -21,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class Authservice {
 
 	private final UserRepository userRepository; // 123
+	private final MovieRepository movieRepository;
 	private final PasswordEncoder passwordEncoder;
 	private final JwtUtil jwtUtil;
 
@@ -61,4 +63,17 @@ public class Authservice {
 		return ResponseEntity.ok(claims);
 	}
 
+	public void delete(Integer id) {
+		if (id == null || id<=0) {
+			throw new OurRuntimeException(null, "id mutleqdir");
+		}
+		Optional<User> finded = userRepository.findById(id);
+		if (finded.isPresent()) {
+			User user = finded.get();
+			userRepository.deleteById(id);
+			movieRepository.deleteUserMovies(user.getId());
+		}else {
+			throw new OurRuntimeException(null, "id tapilmadi");
+		}
+	}
 }

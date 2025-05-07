@@ -1,5 +1,8 @@
 package com.example.Movie_project.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -7,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.example.Movie_project.dto.MovieRequestDto;
 import com.example.Movie_project.entity.Movie;
 import com.example.Movie_project.entity.User;
+import com.example.Movie_project.exception.OurRuntimeException;
 import com.example.Movie_project.repository.MovieRepository;
 import com.example.Movie_project.repository.UserRepository;
 import com.example.Movie_project.response.MovieResponse;
@@ -44,4 +48,29 @@ public class MovieService {
 		return response;
 	}
 
+	public List<String> getMovieTitle() {
+		return movieRepository.getMovieNames();
+	}
+
+	public void delete(Integer id) {
+		String username = SecurityContextHolder.getContext().getAuthentication().getName();
+		User operatorUser = userRepository.getUserByUsername(username);
+		
+		if (id == null || id<=0) {
+			throw new OurRuntimeException(null, "id mutleqdir");
+		}
+		Optional<Movie> movie = movieRepository.findById(id);
+		if (movie.isPresent()) {
+			if (movie.get().getUserId() == operatorUser.getId()) {
+				movieRepository.deleteById(id);
+				
+			}else {
+				throw new OurRuntimeException(null, "oz filminini sil");
+			}
+		}else {
+			throw new OurRuntimeException(null, "id tapilmadi");
+		}
+	}
+
+	
 }
