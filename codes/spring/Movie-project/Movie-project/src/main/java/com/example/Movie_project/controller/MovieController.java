@@ -3,6 +3,7 @@ package com.example.Movie_project.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,6 +34,7 @@ public class MovieController {
 	}
 	
 	@PostMapping(path = "/add")
+	@PreAuthorize("hasAuthority('ROLE_ADD_MOVIE')")
 	public void create(@RequestBody MovieRequestDto dto) {
 		movieService.add(dto);
 	}

@@ -2,8 +2,14 @@ package com.example.Movie_project.config;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -24,7 +30,7 @@ public class AuthFilter extends OncePerRequestFilter {
 
     private final JwtUtil jwtUtil;
 
-    @Override
+	@Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
 
@@ -38,9 +44,17 @@ public class AuthFilter extends OncePerRequestFilter {
         String username = jwtUtil.extractUsername(token);
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            User userDetails = new User(username, "", new ArrayList());
+        	Map<String,Object> claims = jwtUtil.extractClaims(token);
+        	List<String> authorities = (List<String>) claims.get("authorities");
+        	
+        	List<SimpleGrantedAuthority> grantedAuthority = authorities.stream()
+        			.map(SimpleGrantedAuthority::new )
+        			.collect(Collectors.toList());
+        	
+            User userDetails = new User(username, "",grantedAuthority);
+            
             UsernamePasswordAuthenticationToken authToken =
-                    new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                    new UsernamePasswordAuthenticationToken(userDetails, null, grantedAuthority);
             authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
             SecurityContextHolder.getContext().setAuthentication(authToken);

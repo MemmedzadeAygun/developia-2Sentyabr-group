@@ -1,16 +1,20 @@
 package com.example.Movie_project.service;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.Movie_project.dto.AuthRequestDto;
+import com.example.Movie_project.entity.Authorities;
 import com.example.Movie_project.entity.User;
 import com.example.Movie_project.exception.InvalidCredentialsException;
 import com.example.Movie_project.exception.OurRuntimeException;
+import com.example.Movie_project.repository.AuthorityRepository;
 import com.example.Movie_project.repository.MovieRepository;
 import com.example.Movie_project.repository.UserRepository;
 import com.example.Movie_project.util.JwtUtil;
@@ -24,6 +28,7 @@ public class Authservice {
 	private final UserRepository userRepository; // 123
 	private final MovieRepository movieRepository;
 	private final PasswordEncoder passwordEncoder;
+	private final AuthorityRepository authorityRepository;
 	private final JwtUtil jwtUtil;
 
 	public String create(AuthRequestDto dto) {
@@ -41,6 +46,12 @@ public class Authservice {
 		user.setEmail(dto.getEmail());
 		user.setPassword(encode);
 		userRepository.save(user);
+		
+		Authorities a1=new Authorities();
+		a1.setUsername(user.getUsername());
+		a1.setAuthority("ROLE_ADD_MOVIE");
+		authorityRepository.save(a1);
+
 		return "User create successfully";
 
 	}
@@ -51,15 +62,19 @@ public class Authservice {
 		if (!user.isPresent() || !passwordEncoder.matches(dto.getPassword(), user.get().getPassword())) {
 			throw new InvalidCredentialsException("Username or pasword incorrect");
 		}
-
-		return jwtUtil.generateToken(user.get().getUsername(),user.get().getFirstName(),user.get().getLastName(),user.get().getEmail());
+		
+		List<String> authorityList =  authorityRepository.findByUsername(user.get().getUsername()).stream()
+				.map(Authorities :: getAuthority)
+				.collect(Collectors.toList());
+				
+		return jwtUtil.generateToken(user.get().getUsername(),user.get().getFirstName(),user.get().getLastName(),user.get().getEmail(),authorityList);
 	}
 
-	public ResponseEntity<Map<String, String>> getUserDetail(String token) {
+	public ResponseEntity<Map<String, Object>> getUserDetail(String token) {
 		if (token.startsWith("Bearer")) {
 			token=token.substring(7);
 		}
-		Map<String,String> claims = jwtUtil.extractClaims(token);
+		Map<String, Object> claims = jwtUtil.extractClaims(token);
 		return ResponseEntity.ok(claims);
 	}
 

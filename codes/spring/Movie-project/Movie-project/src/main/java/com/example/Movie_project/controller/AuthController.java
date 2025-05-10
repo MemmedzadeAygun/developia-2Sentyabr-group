@@ -45,7 +45,7 @@ public class AuthController {
 	}
 	
 	@GetMapping(path = "/profile")
-	public ResponseEntity<Map<String, String>> getUserDetails(@RequestHeader("Authorization") String token){
+	public ResponseEntity<Map<String, Object>> getUserDetails(@RequestHeader("Authorization") String token){
 		return service.getUserDetail(token);
 	}
 	
