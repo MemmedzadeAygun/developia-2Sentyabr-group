@@ -14,5 +14,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MovieResponse {
-private List<Movie> movies;
+private List<String> movies;
+
 }
