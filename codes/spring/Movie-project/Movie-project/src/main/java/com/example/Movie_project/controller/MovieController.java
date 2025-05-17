@@ -17,9 +17,15 @@ import com.example.Movie_project.dto.MovieRequestDto;
 import com.example.Movie_project.response.MovieResponse;
 import com.example.Movie_project.service.MovieService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping(path = "/movies")
 @CrossOrigin(origins = "*")
+@SecurityRequirement(name = "bearerAuth")
+@Tag(name = "Movie Controller",description = "Movie apileri")
 public class MovieController {
 
 	@Autowired
@@ -37,6 +43,11 @@ public class MovieController {
 	}
 
 	@GetMapping(path = "/getAll")
+	
+	@Operation(
+			description = "Get api for Movie",
+			summary = "This is a summary for Movie get api"
+			)
 	public MovieResponse getAll() {
 		return movieService.get();
 	}

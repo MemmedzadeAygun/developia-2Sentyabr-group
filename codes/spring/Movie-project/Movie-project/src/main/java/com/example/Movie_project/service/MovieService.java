@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -50,7 +51,7 @@ public class MovieService {
 		MovieResponse response = new MovieResponse();
 //		response.setMovies(movieRepository.findByUserId(id));
 		
-		List<Movie> movies=movieRepository.findByUserId(id); 
+		List<Movie> movies = movieRepository.findByUserId(id); 
 		Function<Movie, String> f = new Function<Movie, String>() {
 			
 			@Override
@@ -87,8 +88,16 @@ public class MovieService {
 		if (id == null || id <= 0) {
 			throw new OurRuntimeException(null, "id mutleqdir");
 		}
-
-		Movie movie = movieRepository.findById(id).orElseThrow(() -> new OurRuntimeException(null, "id tapilmadi"));
+		
+		Supplier<OurRuntimeException> s = new Supplier<OurRuntimeException>() {
+			
+			@Override
+			public OurRuntimeException get() {
+				return new OurRuntimeException(null, "id tapilmadi");
+			}
+		};
+		
+		Movie movie = movieRepository.findById(id).orElseThrow(s);
 
 		if (movie.getUserId() == operatorUser.getId()) {
 			movieRepository.deleteById(id);
