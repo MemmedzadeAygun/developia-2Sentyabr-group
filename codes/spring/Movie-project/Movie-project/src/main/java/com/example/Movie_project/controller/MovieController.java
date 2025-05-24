@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Movie_project.dto.MovieRequestDto;
 import com.example.Movie_project.response.MovieResponse;
+import com.example.Movie_project.response.MovieResponseDto;
 import com.example.Movie_project.service.MovieService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -31,10 +32,10 @@ public class MovieController {
 	@Autowired
 	private MovieService movieService;
 
-	@GetMapping
-	public String getMovie() {
-		return "get movie";
-	}
+//	@GetMapping
+//	public String getMovie() {
+//		return "get movie";
+//	}
 
 	@PostMapping(path = "/add")
 	@PreAuthorize("hasAuthority('ROLE_ADD_MOVIE')")
@@ -60,6 +61,12 @@ public class MovieController {
 	@DeleteMapping(path = "/{id}")
 	public void deleteMovie(@PathVariable Integer id) {
 		movieService.delete(id);
+	}
+	
+	@GetMapping(path = "/{id}") 
+//	movies/nese
+	public MovieResponseDto getById(@PathVariable Integer id) {
+		return movieService.getMovieById(id);
 	}
 	
 }

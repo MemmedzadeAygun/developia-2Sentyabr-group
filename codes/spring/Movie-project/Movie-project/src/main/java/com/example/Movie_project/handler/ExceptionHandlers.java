@@ -56,4 +56,13 @@ public class ExceptionHandlers {
 		
 	}
 	
+	@ExceptionHandler
+	@ResponseStatus(code = HttpStatus.BAD_REQUEST) //400
+	public ExceptionResponse handlec(MethodArgumentTypeMismatchException exc) {
+		ExceptionResponse response = new ExceptionResponse();
+		response.setMessage("id e string menimsetmek olmaz");
+		return response;
+		
+	}
+	
 }

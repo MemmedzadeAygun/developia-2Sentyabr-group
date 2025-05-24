@@ -19,6 +19,7 @@ import com.example.Movie_project.exception.OurRuntimeException;
 import com.example.Movie_project.repository.MovieRepository;
 import com.example.Movie_project.repository.UserRepository;
 import com.example.Movie_project.response.MovieResponse;
+import com.example.Movie_project.response.MovieResponseDto;
 
 @Service
 public class MovieService {
@@ -104,6 +105,23 @@ public class MovieService {
 
 		} else {
 			throw new OurRuntimeException(null, "oz filminini sil");
+		}
+	}
+
+	public MovieResponseDto getMovieById(Integer id) {
+		if (id == null || id <= 0) {
+			throw new OurRuntimeException(null, "id mutleqdir");
+		}
+		Optional<Movie> movie = movieRepository.findById(id);
+		if (movie.isPresent()) {
+			MovieResponseDto res = new MovieResponseDto();
+			res.setId(movie.get().getId());
+			res.setGenre(movie.get().getGenre());
+			res.setRating(movie.get().getRating());
+			res.setTitle(movie.get().getTitle());
+			return res;
+		}else {
+			throw new OurRuntimeException(null, "id tapilmadi");
 		}
 	}
 }
