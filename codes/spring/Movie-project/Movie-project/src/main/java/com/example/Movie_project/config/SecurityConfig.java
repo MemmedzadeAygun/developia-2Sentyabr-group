@@ -47,10 +47,12 @@ public class SecurityConfig {
             .exceptionHandling(exc -> exc
             		.authenticationEntryPoint((request,response,authException) -> {
             			response.sendError(HttpServletResponse.SC_UNAUTHORIZED); //401
-            		}))
+            		})
+            		)
+            
             .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
             .build();
-    }
+    	}
  
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {

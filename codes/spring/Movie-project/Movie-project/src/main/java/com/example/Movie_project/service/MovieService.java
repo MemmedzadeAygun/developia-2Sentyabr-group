@@ -106,5 +106,4 @@ public class MovieService {
 			throw new OurRuntimeException(null, "oz filminini sil");
 		}
 	}
-
 }
