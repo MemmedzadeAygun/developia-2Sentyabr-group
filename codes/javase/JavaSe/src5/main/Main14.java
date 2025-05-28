@@ -24,7 +24,9 @@ public class Main14 {
 //		});
 //	}
 	
-//	public static void doIt(Blockable b) {
-//		b.block("Aygun");
 	}
+	
+//	public static void doIt(Blockable b) {
+//		b.block();
+//	}
 }
