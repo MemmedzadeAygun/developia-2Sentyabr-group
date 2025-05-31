@@ -45,8 +45,18 @@ public class AuthFilter extends OncePerRequestFilter {
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
         	Map<String,Object> claims = jwtUtil.extractClaims(token);
-        	List<String> authorities = (List<String>) claims.get("authorities");
+//        	List<String> authorities = (List<String>) claims.get("authorities");
         	
+        	Object object = claims.get("authorities");
+        	List<String> authorities = new ArrayList<String>();
+        	if (object instanceof List) {
+				authorities = (List<String>) object;
+			}else if(object instanceof String[]) {
+				authorities = Arrays.asList((String[]) object);
+			}else if(object instanceof String) {
+				authorities = Arrays.asList((String) object);
+			}
+ 
         	List<SimpleGrantedAuthority> grantedAuthority = authorities.stream()
         			.map(SimpleGrantedAuthority::new )
         			.collect(Collectors.toList());
