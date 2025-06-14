@@ -52,6 +52,7 @@ public class MovieController {
 	public MovieResponse getAll() {
 		return movieService.get();
 	}
+	
 
 	@GetMapping(path = "/title")
 	public List<String> getMovieTitles() {

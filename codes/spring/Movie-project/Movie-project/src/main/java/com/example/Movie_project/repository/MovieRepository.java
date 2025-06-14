@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.example.Movie_project.entity.Movie;
+import com.example.Movie_project.response.MovieResponse;
 
 import jakarta.transaction.Transactional;
 
@@ -21,5 +22,4 @@ public interface MovieRepository extends JpaRepository<Movie, Integer>{
 
 	@Query(value = "Select title from movies",nativeQuery = true)
 	List<String> getMovieNames();
-
 }
