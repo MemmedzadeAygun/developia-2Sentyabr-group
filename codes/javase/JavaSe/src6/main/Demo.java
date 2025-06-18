@@ -55,6 +55,107 @@ public class Demo {
 //		int result = s++ + ++s % (s - 2) + --s;
 //		System.out.println(result);
 		
+//		int a = -5;
+//		if(a > 0) {
+//			sertin govdesi
+//			System.out.println(a);
+//		}
+//		else if(a < 0){
+//			System.out.println(a + 2);
+//		}else {
+//			System.out.println("sert sehdir");
+//		}
+		
+//		String name = "Eli";
+//		
+//		switch (name) {
+//		case "Nermin":
+//			System.out.println("Menim adim Nermindir");
+//			break;
+//		case "Veli":
+//			System.out.println("Menim adim Velidir");
+//			break;
+//		case "Celil":
+//			System.out.println("Menim adim Celildir");
+//			break;
+//		default:
+//			System.out.println("Yalnis deyer");
+//			break;
+//		}
+		
+//		int a = 10;
+//		int b = 20;
+//		
+//		int result = a < b ? a : b;
+//		System.out.println(result);
+		
+//		String user = "veli";
+//		
+//		String r = user == "nermin" || user == "veli" ? "giris eden istifadeci " + user : "yalnis istifadeci";
+//		System.out.println(r);
+		
+	
+		
+		// on sertli son sertli
+//		System.out.println("salam");
+//		System.out.println("salam");
+//		System.out.println("salam");
+//		System.out.println("salam");
+		
+//		int a = 10;
+		
+//		while(a < 10) {
+//			sertin govdesi
+//			System.out.println("salam");
+//			a++;
+//			System.out.println(a);
+//		}
+		
+//		while(a > 0) {
+//			System.out.println(a);
+//			a -=2;
+//		}
+		
+//		do {
+//			System.out.println(a);
+//			a--;
+//		}while(a > 0);
+		
+//		for(int a = 0; a <= 10; a++) {
+//			System.out.println(a);
+//		}
+		
+//		for(int i = 1; i <= 5; i++) {
+//			System.out.println(i);
+//		}
+		
+		// 1 +2+ 3 4
+		
+//		int sum = 0;
+//	for(int i = 1; i < 100; i++) {
+//		System.out.println(i);
+//		System.out.println(sum + " = " + sum + "+" + i);
+//		sum += i; //sum = sum + i
+//	}	
+//	System.out.println(sum);
+		
+		
+//		String text = "salam dunya";
+//		String[] split = text.split("");
+//		
+//		for (String s : split) {
+//			if (s.equals("m")) {
+//				break;
+//			}
+			
+//			if (s.equals("a")) {
+//				continue;
+//			}
+//			System.out.println(s);
+//			
+//		}
+		
+		
 	}
 
 }

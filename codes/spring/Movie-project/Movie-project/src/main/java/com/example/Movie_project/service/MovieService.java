@@ -125,4 +125,9 @@ public class MovieService {
 		}
 	}
 
+	public List<Movie> findpagination(Integer begin, Integer length) {
+		
+		return movieRepository.pagination(begin, length);
+	}
+
 }

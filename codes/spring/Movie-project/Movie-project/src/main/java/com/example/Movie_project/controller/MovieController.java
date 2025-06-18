@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Movie_project.dto.MovieRequestDto;
+import com.example.Movie_project.entity.Movie;
 import com.example.Movie_project.response.MovieResponse;
 import com.example.Movie_project.response.MovieResponseDto;
 import com.example.Movie_project.service.MovieService;
@@ -51,6 +52,13 @@ public class MovieController {
 			)
 	public MovieResponse getAll() {
 		return movieService.get();
+	}
+	
+	
+	// /movies/pagination/begin/0/length/10
+	@GetMapping(path = "/pagination/begin/{begin}/length/{length}")
+	public List<Movie> pagination(@PathVariable Integer begin, @PathVariable Integer length) {
+		return movieService.findpagination(begin, length);
 	}
 	
 
