@@ -6,6 +6,16 @@ public class Demo {
 
 	public static void main(String[] args) {
 		
+		Student s = new Student("Elirahim","Elizade",14);
+//		s.name = "Emin";
+//		s.surname = "Quliyev";
+//		s.age = 14;
+		System.out.println(s);
+//		System.out.println(s.name);
+//		System.out.println(s.surname);
+//		System.out.println(s.age);
+		
+		
 //		String text = "Salam Dunya";
 //		System.out.println(text.toLowerCase());
 //		System.out.println(text.toUpperCase());
