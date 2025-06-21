@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Movie_project.dto.MovieRequestDto;
 import com.example.Movie_project.entity.Movie;
+import com.example.Movie_project.entity.TestEntity;
 import com.example.Movie_project.response.MovieResponse;
 import com.example.Movie_project.response.MovieResponseDto;
 import com.example.Movie_project.service.MovieService;
@@ -78,4 +79,9 @@ public class MovieController {
 		return movieService.getMovieById(id);
 	}
 	
+	
+	@GetMapping(path = "/view")
+	public List<TestEntity> getView(){
+		return movieService.findView();
+	}
 }

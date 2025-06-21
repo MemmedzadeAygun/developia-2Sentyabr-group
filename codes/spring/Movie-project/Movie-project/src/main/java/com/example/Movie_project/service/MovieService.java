@@ -14,10 +14,12 @@ import org.springframework.stereotype.Service;
 
 import com.example.Movie_project.dto.MovieRequestDto;
 import com.example.Movie_project.entity.Movie;
+import com.example.Movie_project.entity.TestEntity;
 import com.example.Movie_project.entity.User;
 import com.example.Movie_project.exception.OurRuntimeException;
 import com.example.Movie_project.repository.MovieRepository;
 import com.example.Movie_project.repository.UserRepository;
+import com.example.Movie_project.repository.ViewRepository;
 import com.example.Movie_project.response.MovieResponse;
 import com.example.Movie_project.response.MovieResponseDto;
 
@@ -29,6 +31,10 @@ public class MovieService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private ViewRepository viewRepository;
+	
 
 	public void add(MovieRequestDto dto) {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -128,6 +134,11 @@ public class MovieService {
 	public List<Movie> findpagination(Integer begin, Integer length) {
 		
 		return movieRepository.pagination(begin, length);
+	}
+
+	public List<TestEntity> findView() {
+		
+		return viewRepository.findAll();
 	}
 
 }
