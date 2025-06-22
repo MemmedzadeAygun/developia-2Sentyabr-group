@@ -2,6 +2,8 @@ package main;
 
 import java.util.Scanner;
 
+import main.Student;
+
 public class Demo {
 
 	public static void main(String[] args) {
@@ -10,6 +12,24 @@ public class Demo {
 //		s.name = "Emin";
 //		s.surname = "Quliyev";
 //		s.age = 14;
+//		s.showInfo();
+//		s.showInfo(12);
+//		System.out.println(s.calc(35));
+		
+		int number = 23;
+		System.out.println(number);
+		Integer calc = s.calc(number);
+		System.out.println(calc);
+		
+		System.out.println(number);
+		
+		System.out.println("------------------");
+		
+		System.out.println(s.age);
+		
+		Student.calc(s);
+		
+		System.out.println(s.age);
 		
 //		System.out.println(s.name);
 //		System.out.println(s.surname);
