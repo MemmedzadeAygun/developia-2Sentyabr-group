@@ -18,8 +18,8 @@ public class Demo {
 		
 		int number = 23;
 		System.out.println(number);
-		Integer calc = s.calc(number);
-		System.out.println(calc);
+//		Integer calc = s.calc(number);
+//		System.out.println(calc);
 		
 		System.out.println(number);
 		
