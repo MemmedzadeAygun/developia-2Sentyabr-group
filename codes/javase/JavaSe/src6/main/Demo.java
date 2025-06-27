@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import main.Student;
@@ -8,7 +9,7 @@ public class Demo {
 
 	public static void main(String[] args) {
 		
-		Student s = new Student("Elirahim","Elizade",14);
+//		Student s = new Student("Elirahim","Elizade",14);
 //		s.name = "Emin";
 //		s.surname = "Quliyev";
 //		s.age = 14;
@@ -16,20 +17,20 @@ public class Demo {
 //		s.showInfo(12);
 //		System.out.println(s.calc(35));
 		
-		int number = 23;
-		System.out.println(number);
+//		int number = 23;
+//		System.out.println(number);
 //		Integer calc = s.calc(number);
 //		System.out.println(calc);
 		
-		System.out.println(number);
-		
-		System.out.println("------------------");
-		
-		System.out.println(s.age);
-		
-		Student.calc(s);
-		
-		System.out.println(s.age);
+//		System.out.println(number);
+//		
+//		System.out.println("------------------");
+//		
+//		System.out.println(s.age);
+//		
+//		Student.calc(s);
+//		
+//		System.out.println(s.age);
 		
 //		System.out.println(s.name);
 //		System.out.println(s.surname);
@@ -183,8 +184,5 @@ public class Demo {
 //			System.out.println(s);
 //			
 //		}
-		
-		
 	}
-
 }
