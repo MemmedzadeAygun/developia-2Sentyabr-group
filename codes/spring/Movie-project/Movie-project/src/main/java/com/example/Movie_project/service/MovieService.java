@@ -6,8 +6,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -23,6 +23,9 @@ import com.example.Movie_project.repository.ViewRepository;
 import com.example.Movie_project.response.MovieResponse;
 import com.example.Movie_project.response.MovieResponseDto;
 
+import jakarta.validation.Valid;
+
+
 @Service
 public class MovieService {
 
@@ -34,6 +37,9 @@ public class MovieService {
 	
 	@Autowired
 	private ViewRepository viewRepository;
+	
+	@Autowired
+	private ModelMapper mapper;
 	
 
 	public void add(MovieRequestDto dto) {
@@ -139,6 +145,20 @@ public class MovieService {
 	public List<TestEntity> findView() {
 		
 		return viewRepository.findAll();
+	}
+
+	public void update(@Valid MovieRequestDto dto) {
+		if (dto.getId() == null || dto.getId() <= 0) {
+			throw new OurRuntimeException(null, "id is wrong");
+		}
+		Optional<Movie> byId = movieRepository.findById(dto.getId());
+		if (byId.isPresent()) {
+			Movie movie = byId.get();
+			mapper.map(dto, movie);
+			movieRepository.save(movie);
+		}else {
+			throw new OurRuntimeException(null, "id not found");
+		}
 	}
 
 }
