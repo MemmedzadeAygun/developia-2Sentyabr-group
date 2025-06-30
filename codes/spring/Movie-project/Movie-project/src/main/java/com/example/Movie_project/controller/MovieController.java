@@ -79,7 +79,7 @@ public class MovieController {
 	
 	@GetMapping(path = "/{id}",produces = {"application/json","application/xml"}) 
 //	movies/nese
-	public MovieResponseDto getById(@PathVariable Integer id) {
+	public MovieResponseDto  getById(@PathVariable Integer id) {
 		return movieService.getMovieById(id);
 	}
 	

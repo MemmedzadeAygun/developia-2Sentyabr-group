@@ -49,9 +49,10 @@ public class MovieService {
 
 		Movie movie = new Movie();
 		movie.setId(null);
-		movie.setGenre(dto.getGenre());
-		movie.setRating(dto.getRating());
-		movie.setTitle(dto.getTitle());
+//		movie.setGenre(dto.getGenre());
+//		movie.setRating(dto.getRating());
+//		movie.setTitle(dto.getTitle());
+		mapper.map(dto, movie);
 		movie.setUserId(id);
 		movieRepository.save(movie);
 	}
