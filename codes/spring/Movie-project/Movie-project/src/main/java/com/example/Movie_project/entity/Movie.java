@@ -38,4 +38,6 @@ public class Movie {
 	
 	@ManyToMany(mappedBy = "movies")
 	private List<User> viewers;
+	
+	//Dynamic Filtering
 }

@@ -1,5 +1,6 @@
 package com.example.Movie_project.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -22,6 +23,7 @@ import com.example.Movie_project.repository.UserRepository;
 import com.example.Movie_project.repository.ViewRepository;
 import com.example.Movie_project.response.MovieResponse;
 import com.example.Movie_project.response.MovieResponseDto;
+import com.example.Movie_project.response.MovieResponseModel;
 
 import jakarta.validation.Valid;
 
@@ -160,6 +162,17 @@ public class MovieService {
 		}else {
 			throw new OurRuntimeException(null, "id not found");
 		}
+	}
+
+	public List<MovieResponseModel> convertMovieToResponseModel(List<Movie> movies) {
+		// TODO Auto-generated method stub
+		List<MovieResponseModel> dtos = new ArrayList<MovieResponseModel>();
+		for (Movie movie : movies) {
+			MovieResponseModel dto = new MovieResponseModel();
+			mapper.map(movie, dto);
+			dtos.add(dto);
+		}
+		return dtos;
 	}
 
 }

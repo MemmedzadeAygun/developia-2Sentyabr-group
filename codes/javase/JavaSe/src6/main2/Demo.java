@@ -8,13 +8,6 @@ import main.Student;
 public class Demo {
 
 	public static void main(String[] args) {
-	
-//		String s1 = "salam"; //1234
-//		String s2 = "salam";
-//		String s2 = new String("salam"); //12345
-		
-//		System.out.println(s1.equals(s2));
-//		System.out.println(s1 == s2);
 		
 //		int[] arr = {10, 20, 30, 40, 50};
 //		
