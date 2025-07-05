@@ -1,0 +1,91 @@
+2025-07-05T05:48:49.525-07:00  INFO 18992 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Starting MovieProjectApplication using Java 21.0.5 with PID 18992 (C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project\target\classes started by User in C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project)
+2025-07-05T05:48:49.550-07:00  INFO 18992 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-05T05:48:49.790-07:00  INFO 18992 --- [Movie-project] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-05T05:48:49.791-07:00  INFO 18992 --- [Movie-project] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-05T05:48:55.903-07:00  INFO 18992 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-05T05:48:56.408-07:00  INFO 18992 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 453 ms. Found 4 JPA repository interfaces.
+2025-07-05T05:49:01.920-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9999 (http)
+2025-07-05T05:49:02.044-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-05T05:49:02.053-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-07-05T05:49:02.460-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-05T05:49:02.466-07:00  INFO 18992 --- [Movie-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12669 ms
+2025-07-05T05:49:03.192-07:00  INFO 18992 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-05T05:49:05.126-07:00  INFO 18992 --- [Movie-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61a1720
+2025-07-05T05:49:05.140-07:00  INFO 18992 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-05T05:49:05.801-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-05T05:49:06.525-07:00  INFO 18992 --- [Movie-project] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-07-05T05:49:06.741-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-05T05:49:08.806-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-05T05:49:09.419-07:00  INFO 18992 --- [Movie-project] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-05T05:49:13.621-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-05T05:49:14.080-07:00  INFO 18992 --- [Movie-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-05T05:49:15.736-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-05T05:49:16.892-07:00  WARN 18992 --- [Movie-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-05T05:49:20.413-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3307/movie_db'
+2025-07-05T05:49:20.994-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-05T05:49:21.208-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9999 (http) with context path '/'
+2025-07-05T05:49:21.272-07:00  INFO 18992 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Started MovieProjectApplication in 34.087 seconds (process running for 37.098)
+2025-07-05T05:50:53.302-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-05T05:50:53.330-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-05T05:50:53.496-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 161 ms
+2025-07-05T05:54:06.012-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-5] c.e.M.controller.MovieController         : GET movies/getAll cagirildi
+2025-07-05T05:56:10.866-07:00  INFO 18992 --- [Movie-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-07-05T05:56:11.339-07:00  INFO 18992 --- [Movie-project] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-05T05:56:11.456-07:00  INFO 18992 --- [Movie-project] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-05T05:56:11.621-07:00  INFO 18992 --- [Movie-project] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-05T05:56:11.855-07:00  INFO 18992 --- [Movie-project] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-05T05:56:12.169-07:00  INFO 18992 --- [Movie-project] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-05T05:56:16.081-07:00  INFO 18992 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Starting MovieProjectApplication using Java 21.0.5 with PID 18992 (C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project\target\classes started by User in C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project)
+2025-07-05T05:56:16.085-07:00  INFO 18992 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-07-05T05:56:21.785-07:00  INFO 18992 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-05T05:56:23.337-07:00  INFO 18992 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1532 ms. Found 4 JPA repository interfaces.
+2025-07-05T05:56:27.503-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9999 (http)
+2025-07-05T05:56:27.523-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-05T05:56:27.533-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-07-05T05:56:28.002-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-05T05:56:28.003-07:00  INFO 18992 --- [Movie-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11896 ms
+2025-07-05T05:56:29.400-07:00  INFO 18992 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-05T05:56:29.978-07:00  INFO 18992 --- [Movie-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3365c1f1
+2025-07-05T05:56:29.979-07:00  INFO 18992 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-05T05:56:30.220-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-05T05:56:30.337-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-05T05:56:30.898-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-05T05:56:30.933-07:00  INFO 18992 --- [Movie-project] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-05T05:56:32.168-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-05T05:56:32.487-07:00  INFO 18992 --- [Movie-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-05T05:56:34.553-07:00  WARN 18992 --- [Movie-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-05T05:56:37.617-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3307/movie_db'
+2025-07-05T05:56:37.733-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-05T05:56:37.804-07:00  INFO 18992 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9999 (http) with context path '/'
+2025-07-05T05:56:37.838-07:00  INFO 18992 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Started MovieProjectApplication in 23.421 seconds (process running for 473.664)
+2025-07-05T05:56:37.869-07:00  INFO 18992 --- [Movie-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-05T05:56:50.861-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-05T05:56:50.863-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-05T05:56:50.869-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-07-05T05:56:54.721-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-1] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:56:59.595-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-3] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:57:01.950-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-4] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:09.214-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-6] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:13.622-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-8] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:16.364-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-10] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:18.507-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-9] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:20.856-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-2] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:23.194-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-1] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:25.924-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-3] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:28.864-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-4] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:52.137-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-5] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)
+2025-07-05T05:59:54.528-07:00  INFO 18992 --- [Movie-project] [http-nio-9999-exec-7] c.e.M.controller.MovieController         : PUT api cagirildiMovieRequestDto(id=17, title=Qirmizi papaq, genre=komediya, rating=4, userId=null)

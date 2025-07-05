@@ -2,6 +2,8 @@ package com.example.Movie_project.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -38,6 +40,8 @@ import jakarta.validation.Valid;
 @SecurityRequirement(name = "bearerAuth")
 @Tag(name = "Movie Controller",description = "Movie apileri")
 public class MovieController {
+	
+	private Logger log = LoggerFactory.getLogger(MovieController.class);
 
 	@Autowired
 	private MovieService movieService;
@@ -48,10 +52,12 @@ public class MovieController {
 	@Autowired
 	private DynamicFiltering filtering;
 	
+	
 //	@GetMapping
 //	public String getMovie() {
 //		return "get movie";
 //	}
+	
 
 	@PostMapping(path = "/add")
 	@PreAuthorize("hasAuthority('ROLE_ADD_MOVIE')")
@@ -66,6 +72,7 @@ public class MovieController {
 			summary = "This is a summary for Movie get api"
 			)
 	public MovieResponse getAll() {
+		log.info("GET movies/getAll cagirildi");
 		return movieService.get();
 	}
 	
@@ -104,6 +111,7 @@ public class MovieController {
 		if (br.hasErrors()) {
 			throw new OurRuntimeException(br, "");
 		}
+		log.info("PUT api cagirildi" + dto);
 		movieService.update(dto);
 	}
 	
