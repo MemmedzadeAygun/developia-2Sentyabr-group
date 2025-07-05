@@ -8,8 +8,8 @@ public class Clothing extends Product {
 
 	@Override
 	public double calculateDiscount() {
-		price=price*0.85;
+		price = price * 0.85;
 		return price;
 	}
-	
+
 }

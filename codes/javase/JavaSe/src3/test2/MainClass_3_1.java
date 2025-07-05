@@ -2,22 +2,19 @@ package test2;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Scanner;
-import java.util.TreeSet;
 
 public class MainClass_3_1 {
 	public static void main(String[] args) {
-		
+
 //		int[] array= {1,2,4};
-		
-		ArrayList<String> list=new ArrayList();
+
+		ArrayList<String> list = new ArrayList();
 		list.add("hagsd");
 		list.add("nese");
 		list.add("alma");
 		list.remove(0);
 		System.out.println(list);
-		
+
 		// HasSet
 		// LinkedHasSet
 		// TreeSet
@@ -30,7 +27,7 @@ public class MainClass_3_1 {
 		st.add("Xedice");
 		st.add("Ehmed");
 		st.add("Nermin");
-		
+
 //		System.out.println(st.add("Eli"));
 		System.out.println(st);
 //		if (st.remove("Xedice")) {
@@ -41,7 +38,7 @@ public class MainClass_3_1 {
 //		st.clear();
 		System.out.println(st.isEmpty());
 //		System.out.println(st.contains("Veli"));
-		
+
 		System.out.println(st);
 //
 //		Scanner sc = new Scanner(System.in);

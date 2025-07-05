@@ -12,21 +12,20 @@ public class Computers {
 
 	@Override
 	public boolean equals(Object obj) {
-		
-		Computers that=null;
+
+		Computers that = null;
 		if (obj instanceof Computers) {
 			that = (Computers) obj;
-		}else {
+		} else {
 			return false;
 		}
-		
+
 		if (this.name.equals(that.name) && this.age == that.age) {
 			return true;
 		} else {
 			return false;
 		}
-		
-		
+
 //		this.name.equals(obj.name);
 
 	}

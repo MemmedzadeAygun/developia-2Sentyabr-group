@@ -1,7 +1,7 @@
 package polimorfizm;
 
-class Bank{
-	
+class Bank {
+
 	public Bank() {
 		// TODO Auto-generated constructor stub
 	}
@@ -12,12 +12,12 @@ class Bank{
 	}
 }
 
-class KapitalBank extends Bank{
+class KapitalBank extends Bank {
 
 	public KapitalBank() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	KapitalBank makeSound() {
 		System.out.println("Cat make sound");
@@ -28,13 +28,13 @@ class KapitalBank extends Bank{
 public class MainClass4 {
 
 	public static void main(String[] args) {
-		Bank a1=new Bank();
+		Bank a1 = new Bank();
 		a1.makeSound();
-		
-		KapitalBank cat=new KapitalBank();
+
+		KapitalBank cat = new KapitalBank();
 		cat.makeSound();
-		
-		Bank b=new KapitalBank();
+
+		Bank b = new KapitalBank();
 	}
 
 }

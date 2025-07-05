@@ -9,13 +9,11 @@ public class MainClass2 {
 
 		try {
 			System.out.println(e1.giveArrayElement(array, 0));
-		} 
-		catch (BizmkilerException e) {
+		} catch (BizmkilerException e) {
 			System.out.println(e.getBizimMesaj());
-		}
-		finally {
+		} finally {
 			System.out.println("bu blok mutleq ise dusmelidir");
-			
+
 		}
 	}
 }

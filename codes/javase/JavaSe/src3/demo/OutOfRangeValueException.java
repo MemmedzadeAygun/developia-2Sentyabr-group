@@ -7,7 +7,7 @@ public class OutOfRangeValueException extends RuntimeException {
 	public OutOfRangeValueException(String bizimMesaj) {
 		this.bizimMesaj = bizimMesaj;
 	}
-	
+
 	public String getBizimMesaj() {
 		return bizimMesaj;
 	}

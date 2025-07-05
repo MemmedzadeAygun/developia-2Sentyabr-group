@@ -11,18 +11,18 @@ public class CurrentAccount implements IBankAccount {
 
 	@Override
 	public void deposit(double amount) {
-		balance+=amount;
-		
+		balance += amount;
+
 	}
 
 	@Override
 	public void withDrow(double amount) {
-		balance-=amount;	//overDraft hadisesi
+		balance -= amount; // overDraft hadisesi
 	}
 
 	@Override
 	public double getBalance() {
 		return balance;
 	}
-	
+
 }

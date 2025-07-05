@@ -12,24 +12,23 @@ public class Account implements BankAccount {
 	@Override
 	public void deposit(double amount) {
 //		price+=amount;
-		balance=balance+amount;
-		
+		balance = balance + amount;
+
 	}
 
 	@Override
 	public void withDraw(double amount) {
-		if (balance>amount) {
-			balance=balance-amount;
+		if (balance > amount) {
+			balance = balance - amount;
 		} else {
 			System.out.println("Balasinizda kifayet qeder vesait yoxdur");
 		}
-		
+
 	}
 
 	@Override
 	public double getPrice() {
 		return balance;
 	}
-	
-	
+
 }

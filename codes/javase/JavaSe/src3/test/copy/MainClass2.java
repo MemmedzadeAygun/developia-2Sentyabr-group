@@ -1,10 +1,6 @@
 package test.copy;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Scanner;
-import java.util.TreeSet;
 
 public class MainClass2 {
 	public static void main(String[] args) {
@@ -23,13 +19,12 @@ public class MainClass2 {
 		st.add("Cahandar");
 		if (st.remove("a")) {
 			System.out.println("Istifadeci silindi");
-		}else {
+		} else {
 			System.out.println("Silinmedi");
 		}
 //		st.clear();
 		System.out.println(st.add("Cahandar")); // false
-		
-		
+
 		System.out.println(st);
 //
 //		Scanner sc = new Scanner(System.in);

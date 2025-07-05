@@ -1,6 +1,6 @@
 package oop_demo;
 
-public class ImplementInterfaceClass implements OuterInterface, OuterInterface.InnerInterface{
+public class ImplementInterfaceClass implements OuterInterface, OuterInterface.InnerInterface {
 
 	@Override
 	public void innerMethod() {
@@ -11,6 +11,5 @@ public class ImplementInterfaceClass implements OuterInterface, OuterInterface.I
 	public void outerMethod() {
 		System.out.println("OuterInterface method is  work");
 	}
-
 
 }

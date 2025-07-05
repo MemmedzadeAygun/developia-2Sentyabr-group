@@ -1,14 +1,7 @@
 package test2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Stack;
-
 public class MainClass2 {
-public static void main(String[] args) {
+	public static void main(String[] args) {
 //	Queue<Integer> queue=new LinkedList<Integer>();
 //	
 ////	queue.add(1);
@@ -22,8 +15,7 @@ public static void main(String[] args) {
 //	System.out.println("Poll: "+queue.poll());
 //	queue.remove();
 //	System.out.println(queue);
-	
-	
+
 //	Stack<String> stack=new Stack<String>();
 //	stack.push("Aygun");
 //	stack.push("Xedice");
@@ -34,5 +26,5 @@ public static void main(String[] args) {
 //	System.out.println("Peek: "+stack.peek());
 //	System.out.println(stack.pop());
 //	System.out.println(stack);
-}
+	}
 }

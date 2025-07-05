@@ -6,9 +6,9 @@ public class Person {
 	public Person(String name) {
 		this.name = name;
 	}
-	
+
 	public void showName() {
-		System.out.println("Name:"+name);
+		System.out.println("Name:" + name);
 	}
 
 }

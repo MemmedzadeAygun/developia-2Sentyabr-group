@@ -7,7 +7,7 @@ public class DigitalPayment implements Payment {
 
 	@Override
 	public void processPayment(double amount) {
-		System.out.println(amount+"odenis edildi...");
+		System.out.println(amount + "odenis edildi...");
 	}
 
 	@Override

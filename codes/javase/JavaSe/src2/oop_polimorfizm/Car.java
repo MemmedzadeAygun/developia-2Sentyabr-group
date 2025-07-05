@@ -6,24 +6,23 @@ public class Car extends Transport implements Vehicle {
 		super(brand);
 	}
 
-	private static final double speed=200.0;
+	private static final double speed = 200.0;
 
 	@Override
 	public void move() {
-		System.out.println(getBrand()+" avtomobili yolda hereket edir...");
-		
+		System.out.println(getBrand() + " avtomobili yolda hereket edir...");
+
 	}
 
 	@Override
 	public void stop() {
-		System.out.println(getBrand()+" avtomobili dayandi...");
-		
+		System.out.println(getBrand() + " avtomobili dayandi...");
+
 	}
 
 	@Override
 	public double calculateTravelTime(double distance) {
-		return distance/speed;
+		return distance / speed;
 	}
-	
-	
+
 }
