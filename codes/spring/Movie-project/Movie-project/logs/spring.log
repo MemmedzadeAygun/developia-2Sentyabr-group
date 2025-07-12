@@ -1042,3 +1042,85 @@ java.nio.file.NoSuchFileException: C:\java2Sentyabr\b99cc673-6035-48fa-899a-b699
 2025-07-12T03:29:28.552-07:00  INFO 5264 --- [Movie-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2025-07-12T03:29:28.690-07:00  INFO 5264 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7777 (http) with context path '/'
 2025-07-12T03:29:28.760-07:00  INFO 5264 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Started MovieProjectApplication in 14.071 seconds (process running for 15.261)
+2025-07-12T06:02:34.125-07:00  INFO 11276 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Starting MovieProjectApplication using Java 21.0.5 with PID 11276 (C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project\target\classes started by User in C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project)
+2025-07-12T06:02:34.147-07:00  INFO 11276 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : The following 1 profile is active: "development"
+2025-07-12T06:02:34.452-07:00  INFO 11276 --- [Movie-project] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-12T06:02:34.452-07:00  INFO 11276 --- [Movie-project] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-12T06:02:45.674-07:00  INFO 11276 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-12T06:02:46.042-07:00  INFO 11276 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 323 ms. Found 4 JPA repository interfaces.
+2025-07-12T06:02:56.914-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7777 (http)
+2025-07-12T06:02:56.980-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-12T06:02:56.982-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-07-12T06:02:57.313-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-12T06:02:57.316-07:00  INFO 11276 --- [Movie-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 22861 ms
+2025-07-12T06:02:59.494-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-12T06:03:00.820-07:00  INFO 11276 --- [Movie-project] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-07-12T06:03:02.031-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-12T06:03:05.220-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-12T06:03:05.532-07:00  INFO 11276 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-12T06:03:06.713-07:00  INFO 11276 --- [Movie-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=ROOT
+2025-07-12T06:03:06.723-07:00  INFO 11276 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-12T06:03:06.940-07:00  INFO 11276 --- [Movie-project] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-12T06:03:11.765-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-12T06:03:12.262-07:00  INFO 11276 --- [Movie-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-12T06:03:16.755-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-12T06:03:17.865-07:00  WARN 11276 --- [Movie-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-12T06:03:20.526-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2025-07-12T06:03:21.064-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-12T06:03:21.367-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7777 (http) with context path '/'
+2025-07-12T06:03:21.435-07:00  INFO 11276 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Started MovieProjectApplication in 50.393 seconds (process running for 52.609)
+2025-07-12T06:04:19.996-07:00  INFO 11276 --- [Movie-project] [http-nio-7777-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-12T06:04:20.017-07:00  INFO 11276 --- [Movie-project] [http-nio-7777-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-12T06:04:20.214-07:00  INFO 11276 --- [Movie-project] [http-nio-7777-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 195 ms
+2025-07-12T06:04:42.029-07:00  WARN 11276 --- [Movie-project] [http-nio-7777-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-07-12T06:05:07.147-07:00  WARN 11276 --- [Movie-project] [http-nio-7777-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type is not supported]
+2025-07-12T06:06:19.114-07:00  WARN 11276 --- [Movie-project] [http-nio-7777-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type is not supported]
+2025-07-12T06:07:16.154-07:00  WARN 11276 --- [Movie-project] [http-nio-7777-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type is not supported]
+2025-07-12T06:11:53.524-07:00  INFO 11276 --- [Movie-project] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-07-12T06:11:53.908-07:00  INFO 11276 --- [Movie-project] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-12T06:11:54.141-07:00  INFO 11276 --- [Movie-project] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-12T06:11:54.289-07:00  INFO 11276 --- [Movie-project] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-12T06:11:54.602-07:00  WARN 11276 --- [Movie-project] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-07-12T06:11:54.603-07:00  INFO 11276 --- [Movie-project] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-12T06:11:54.764-07:00  INFO 11276 --- [Movie-project] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-07-12T06:11:56.313-07:00  INFO 11276 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Starting MovieProjectApplication using Java 21.0.5 with PID 11276 (C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project\target\classes started by User in C:\Users\User\Desktop\Github\developia-2Sentyabr-group\codes\spring\Movie-project\Movie-project)
+2025-07-12T06:11:56.316-07:00  INFO 11276 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : The following 1 profile is active: "development"
+2025-07-12T06:12:01.529-07:00  INFO 11276 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-12T06:12:02.195-07:00  INFO 11276 --- [Movie-project] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 614 ms. Found 4 JPA repository interfaces.
+2025-07-12T06:12:03.027-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7777 (http)
+2025-07-12T06:12:03.033-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-12T06:12:03.039-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-07-12T06:12:03.170-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-12T06:12:03.171-07:00  INFO 11276 --- [Movie-project] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6827 ms
+2025-07-12T06:12:03.478-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-12T06:12:03.511-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-12T06:12:03.654-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-12T06:12:03.661-07:00  INFO 11276 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-12T06:12:03.684-07:00  INFO 11276 --- [Movie-project] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:test user=ROOT
+2025-07-12T06:12:03.689-07:00  INFO 11276 --- [Movie-project] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-12T06:12:03.712-07:00  INFO 11276 --- [Movie-project] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-12T06:12:05.489-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-12T06:12:05.574-07:00  INFO 11276 --- [Movie-project] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-12T06:12:07.047-07:00  WARN 11276 --- [Movie-project] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-12T06:12:08.890-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2025-07-12T06:12:09.092-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-12T06:12:09.159-07:00  INFO 11276 --- [Movie-project] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7777 (http) with context path '/'
+2025-07-12T06:12:09.194-07:00  INFO 11276 --- [Movie-project] [restartedMain] c.e.M.MovieProjectApplication            : Started MovieProjectApplication in 13.357 seconds (process running for 580.368)
+2025-07-12T06:12:09.220-07:00  INFO 11276 --- [Movie-project] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-12T06:12:10.944-07:00  INFO 11276 --- [Movie-project] [http-nio-7777-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-12T06:12:10.945-07:00  INFO 11276 --- [Movie-project] [http-nio-7777-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-12T06:12:10.949-07:00  INFO 11276 --- [Movie-project] [http-nio-7777-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
