@@ -9,4 +9,7 @@ import lombok.Data;
 public class UserListResponse {
 
 	private List<UserEntity> userResponse;
+	
+	private List<UserResponse> userwitdhMovies;
+
 }
